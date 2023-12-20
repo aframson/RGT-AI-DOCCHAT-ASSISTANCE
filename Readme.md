@@ -1,7 +1,5 @@
 # RGT AI DOCUMENT CHAT ASSIGNMENT
 
-
-
 ![1703064145604](images/Readme/1703064145604.png)
 
 ![1703064196690](images/Readme/1703064196690.png)
@@ -108,12 +106,89 @@ yarn dev
 
 ## Usage
 
-
 * **Uploading Documents**: Drag and drop or select a document file (PDF, CSV, or text) to upload.
 * **Asking Questions**: Type in your questions related to the document's content in the provided input field.
 * **Viewing Responses**: The AI model processes the questions and displays answers based on the document's content.
 
-
 ## Architecture
 
 ![1703067732434](images/Readme/1703067732434.png)
+
+
+## API Endpoints and Responses 
+
+POST/uploadfile/
+
+> **Body**  form-data
+
+Response 
+
+```
+{
+
+"status": true,
+
+"chat_id": "bc81dd66-28c6-4c12-8e72-8b7b3826749f",
+
+"message": "Data has been processed , Embeddings stored sucessfully"
+
+}
+```
+
+POST/chat/
+
+> **Body**  raw JSON
+
+```
+{
+    "text":"what is this about",
+    "chat_id":"bc81dd66-28c6-4c12-8e72-8b7b3826749f"
+}
+```
+
+
+
+Response
+
+```
+{
+    "question": "what is this about",
+    "answer": "?\n\nThis document is about credit risk management and the practices for banks to promote sound credit risk management.",
+    "drafts": [
+        {
+            "page_content": "1229. Banks need to understand to whom they are granting credit. Therefore, prior to\nentering into any new credit relationship, a bank must become familiar with the borrower or\ncounterparty and be confident that they are dealing with an individual or organisation of\nsound repute and creditworthiness. In particular, strict policies must be in place to avoid\nassociation with individuals involved in fraudulent activities and other crimes. This can be\nachieved through a number of ways, including asking for references from known parties,",
+            "metadata": {},
+            "type": "Document"
+        },
+        {
+            "page_content": "the market turmoil in Asia, Russia and elsewhere in the course of 1997 and 1998. That is, the\nsame factor that changes the value of a market- or liquidity-sensitive instrument can also\ninfluence the borrower’s financial health and future prospects. Banks need to analyse the\nrelationship between market- and liquidity-sensitive exposures and the default risk of\nthe borrower . Stress testing  shocking the market or liquidity factors — is a key element of\nthat analysis.",
+            "metadata": {},
+            "type": "Document"
+        },
+        {
+            "page_content": "experiences. Banks should now have a keen awareness of the need to identify, measure,\nmonitor and control credit risk as well as to determine that they hold adequate capital against\nthese risks and that they are adequately compensated for risks incurred. The Basel Committee\nis issuing this document in order to encourage banking supervisors globally to promote sound\npractices for managing credit risk. Although the principles contained in this paper are most\nCredit risk management",
+            "metadata": {},
+            "type": "Document"
+        },
+        {
+            "page_content": "Globalisation of credit markets increases the need for financial information based on sound\naccounting standards and timely macroeconomic and flow of funds data. When this\ninformation is not available or reliable, banks may dispense with financial and economic\nanalysis and support credit decisions with simple indicators of credit quality, especially if they\nperceive a need to gain a competitive foothold in a rapidly growing foreign market. Finally,\nbanks may need new types of information, such as risk measurements, and more frequent",
+            "metadata": {},
+            "type": "Document"
+        }
+    ]
+}
+```
+
+GET/gethistory/
+
+Response
+
+```
+{
+    "status": true,
+    "history_data": [
+        "_008_Enumerators_maual.pdf:::09c1a811-ef2a-4d1c-a0af-d75027b5a550",
+        "_01. Principles for the Management of Credit Risk Author BIS - Bank for International Settlements.pdf:::4755d3b7-8d51-40c4-be13-5b3a8b9aab9c"
+    ]
+}
+```

@@ -9,6 +9,8 @@ import uuid
 import csv
 import os
 
+
+# List of origins that are allowed to communicate with this API
 app = FastAPI()
 origins = [
     "http://127.0.0.1",
@@ -18,7 +20,7 @@ origins = [
 ]
 
 
-# 
+# Adding CORS middleware to allow cross-origin requests
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
