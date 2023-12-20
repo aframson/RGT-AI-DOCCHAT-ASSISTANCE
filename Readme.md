@@ -45,7 +45,7 @@ source venv/bin/activate  # On Windows, use venv\Scripts\activate
 **Install Python dependencies**:
 
 ```
-pip install fastapi uvicorn PyPDF2 python-multipart lanchain openai chroma
+pip install fastapi PyPDF2 python-multipart langchain openai chromadb  tiktoken "uvicorn[standard]"
 
 ```
 
