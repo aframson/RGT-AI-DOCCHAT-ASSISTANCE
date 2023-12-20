@@ -51,6 +51,8 @@ pip install fastapi uvicorn PyPDF2 python-multipart lanchain openai chroma
 
 **Set environment variables**: i have organized this in a folder called Config
 
+> locate the .env file in the Backend Directory and add your OpenAI API key
+
 ```
 from dotenv import load_dotenv
 import os
@@ -114,14 +116,13 @@ yarn dev
 
 ![1703067732434](images/Readme/1703067732434.png)
 
-
-## API Endpoints and Responses 
+## API Endpoints and Responses
 
 POST/uploadfile/
 
 > **Body**  form-data
 
-Response 
+Response
 
 ```
 {
@@ -145,8 +146,6 @@ POST/chat/
     "chat_id":"bc81dd66-28c6-4c12-8e72-8b7b3826749f"
 }
 ```
-
-
 
 Response
 
