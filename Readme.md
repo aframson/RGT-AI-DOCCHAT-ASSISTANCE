@@ -49,6 +49,8 @@ pip install fastapi PyPDF2 python-multipart langchain openai chromadb  tiktoken 
 
 ```
 
+> NOTE : Re-launch your terminal after you install the dependencies before lanching the server
+
 **Set environment variables**: i have organized this in a folder called Config
 
 > locate the .env file in the Backend Directory and add your OpenAI API key
