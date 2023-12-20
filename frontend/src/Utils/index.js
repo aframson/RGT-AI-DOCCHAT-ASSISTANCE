@@ -1,7 +1,7 @@
 
   
 import axios from 'axios';
-
+import {URL_API} from './UrlEndpont'
 // handle file upload and get chat id after uploading file for processing 
 export const handleFileSubmit = async (file) => {
     const formData = new FormData();
@@ -10,7 +10,7 @@ export const handleFileSubmit = async (file) => {
     console.log('processing file', file);
 
     try {
-        const response = await axios.post('http://127.0.0.1:8000/uploadfile', formData, {
+        const response = await axios.post(`${URL_API}/uploadfile`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -29,7 +29,7 @@ export const handleFileSubmit = async (file) => {
 // handle question submit and get answer from backend
 export const handleQuestionSubmit = async (question, chat_id,filename) => {
     try {
-        const response = await axios.post('http://127.0.0.1:8000/chat/', {
+        const response = await axios.post(`${URL_API}/chat/`, {
             text:question,
             chat_id,
             filename
@@ -48,7 +48,7 @@ export const handleQuestionSubmit = async (question, chat_id,filename) => {
 // get chat history from backend 
 export const getChatHistory = async ()=>{
     try{
-        const response = await axios.get('http://127.0.0.1:8000/gethistory'
+        const response = await axios.get(`${URL_API}/gethistory`
         );
         const data = response.data;
         return data;

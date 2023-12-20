@@ -89,6 +89,14 @@ uvicorn main:app --reload
 
 **avigate to the frontend directory** and install dependencies:
 
+> Locate frontend/src/Utils/UrlEndpont
+
+and change the url to the one generated from your backend server
+
+```
+export const URL_API = "http://127.0.0.1:8000"
+```
+
 ```
 cd frontend
 npm install
