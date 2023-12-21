@@ -18,6 +18,23 @@ Base on the requirements This project is a full-stack web application that lever
 * **AI-Powered Conversations**: Utilizes LangChain with OpenAI models to answer questions based on the content of uploaded documents.
 * **Interactive Front-End**: Built with Next.js, offering a user-friendly interface for file uploads and real-time AI interactions
 
+
+# Folder Structure
+
+### Backend
+
+* **Config**: contains all configurations including hyperparameters for model tuninig and File locations
+* **PromptTemplate**: contains the prompt instruction used to guid the model on what exactly it should perform
+* **Utils**: contains functions for processing data
+* .**env**: contains environment variables
+* **main.py**: contains the endpoint login for the server , this is the main file where the server starts
+
+
+### Front-End
+
+* **Public** : contains images use for the web App
+* Src : contains components pages and Utils used in building the applications
+
 # Requirements
 
 * Python 3.x
